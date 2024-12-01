@@ -28,13 +28,14 @@ dfs = [pd.read_csv(file) for file in csv_files]
 # Concatenate all DataFrames vertically
 df = pd.concat(dfs, ignore_index=True)
 
-df['country'] = df['country'].apply(normalize_country)
-
 # Drop duplicates
 df = df.drop_duplicates(subset='title', keep='first')
 
 # Drop NaN in hourly_low and country columns
 df = df.dropna(subset=['hourly_low', 'country'])
+
+# Normalize the country name according to ISO codes
+df['country'] = df['country'].apply(normalize_country)
 
 # Keep is_hourly = TRUE only
 df = df[df['is_hourly'] == True]
