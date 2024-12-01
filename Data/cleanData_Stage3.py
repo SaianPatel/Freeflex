@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load ISO country code dataset
-country_codes_df = pd.read_csv('wikipedia-iso-country-codes.csv')
+country_codes_df = pd.read_csv('RawData/wikipedia-iso-country-codes.csv')
 
 # Create a mapping between country full name and 3 letter code
 country_mapping = pd.Series(country_codes_df['English short name lower case'].values, index=country_codes_df['Alpha-3 code']).to_dict()
@@ -17,7 +17,7 @@ def normalize_country(country):
 
 # List of CSV file paths
 csv_files = [
-    'Final_Upwork_Dataset.csv'
+    'RawData/Final_Upwork_Dataset.csv'
     # Add more files as needed
 ]
 
