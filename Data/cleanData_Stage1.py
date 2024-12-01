@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load ISO country code dataset
-country_codes_df = pd.read_csv('wikipedia-iso-country-codes.csv')
+country_codes_df = pd.read_csv('RawData/wikipedia-iso-country-codes.csv')
 
 # Create a mapping between country full name and 3 letter code
 country_mapping = pd.Series(country_codes_df['English short name lower case'].values, index=country_codes_df['Alpha-3 code']).to_dict()
@@ -17,9 +17,9 @@ def normalize_country(country):
 
 # List of CSV file paths
 csv_files = [
-    'all_upwork_jobs_2024-02-07-2024-03-24.csv',
-    'all_upwork_jobs_2024-03-24-2024-05-21.csv',
-    'all_upwork_jobs_2024-05-21-2024-07-25.csv'
+    'RawData/all_upwork_jobs_2024-02-07-2024-03-24.csv',
+    'RawData/all_upwork_jobs_2024-03-24-2024-05-21.csv',
+    'RawData/all_upwork_jobs_2024-05-21-2024-07-25.csv'
 ]
 
 # Read each CSV file and store the DataFrames in a list
