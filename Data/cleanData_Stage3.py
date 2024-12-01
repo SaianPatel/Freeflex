@@ -49,4 +49,4 @@ df['End_rate'] = pd.to_numeric(df['End_rate'])  # Convert to float or integer
 df = df[df['Start_rate'] >= 7.25]
 
 # Save new csv
-df.to_csv('Final_UpWork_Dataset_Cleaned_Stage2.csv', index=False)
+df.to_csv('Final_UpWork_Dataset_Cleaned_Stage3.csv', index=False)
